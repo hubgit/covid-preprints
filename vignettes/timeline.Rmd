@@ -12,6 +12,8 @@ knitr::opts_chunk$set(
 
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
+<script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
 ```{css}
 * {
   box-sizing: border-box;
@@ -301,6 +303,7 @@ for (i in seq_len(nrow(df))) {
     cat('</div>')
     cat('<span class="author-name">', df[i, "authorString"], '</span>')
     cat('<p>', df[i, "briefSummary"], '</p>')
+    cat('<div data-badge-type="donut" data-doi="', df[i, "id"], '" class="altmetric-embed"></div>')
     cat('</div>')
   } else if (df[i, "class"] == "event") {
     cat('<div class="container_tl right">')
